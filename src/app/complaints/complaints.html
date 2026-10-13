@@ -1,0 +1,234 @@
+<div class="complaint-page">
+
+  <!-- Header -->
+  <div class="complaint-page-header">
+
+    <div>
+      <h1>Complaints</h1>
+
+      <p>
+        Submit and track complaints related to society services
+      </p>
+    </div>
+
+    <button class="complaint-create-btn">
+      + Submit Complaint
+    </button>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="complaint-stat-grid">
+
+    <div class="complaint-stat blue">
+      <div class="complaint-stat-icon">📋</div>
+
+      <div>
+        <h4>Total Complaints</h4>
+        <h2>32</h2>
+        <p>This year</p>
+      </div>
+    </div>
+
+
+    <div class="complaint-stat red">
+      <div class="complaint-stat-icon">!</div>
+
+      <div>
+        <h4>Open</h4>
+        <h2>8</h2>
+        <p>Need attention</p>
+      </div>
+    </div>
+
+
+    <div class="complaint-stat orange">
+      <div class="complaint-stat-icon">◷</div>
+
+      <div>
+        <h4>In Progress</h4>
+        <h2>5</h2>
+        <p>Being handled</p>
+      </div>
+    </div>
+
+
+    <div class="complaint-stat green">
+      <div class="complaint-stat-icon">✓</div>
+
+      <div>
+        <h4>Resolved</h4>
+        <h2>19</h2>
+        <p>Successfully resolved</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Search and Filter -->
+  <div class="complaint-toolbar">
+
+    <div class="complaint-search">
+      🔍
+
+      <input
+        type="text"
+        placeholder="Search complaints..."
+      >
+    </div>
+
+
+    <select class="complaint-filter">
+      <option>All Status</option>
+      <option>Open</option>
+      <option>In Progress</option>
+      <option>Resolved</option>
+    </select>
+
+
+    <select class="complaint-filter">
+      <option>All Priority</option>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+
+  </div>
+
+
+  <!-- Complaint List -->
+  <div class="complaint-list-card">
+
+    <div class="complaint-list-header">
+
+      <div>
+        <h2>Complaint List</h2>
+        <p>View and manage resident complaints</p>
+      </div>
+
+    </div>
+
+
+    <div class="complaint-table-container">
+
+      <table class="complaint-table">
+
+        <thead>
+
+          <tr>
+            <th>Complaint ID</th>
+            <th>Flat No</th>
+            <th>Resident</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr
+            *ngFor="let complaint of complaintPageData"
+          >
+
+            <td>
+              <strong>{{ complaint.id }}</strong>
+            </td>
+
+            <td>{{ complaint.flat }}</td>
+
+            <td>{{ complaint.resident }}</td>
+
+            <td>
+
+              <div class="complaint-subject">
+
+                <strong>
+                  {{ complaint.subject }}
+                </strong>
+
+                <small>
+                  {{ complaint.description }}
+                </small>
+
+              </div>
+
+            </td>
+
+            <td>{{ complaint.date }}</td>
+
+
+            <td>
+
+              <span
+                class="complaint-priority"
+                [ngClass]="{
+                  'priority-high': complaint.priority === 'High',
+                  'priority-medium': complaint.priority === 'Medium',
+                  'priority-low': complaint.priority === 'Low'
+                }"
+              >
+                {{ complaint.priority }}
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span
+                class="complaint-status"
+                [ngClass]="{
+                  'status-open': complaint.status === 'Open',
+                  'status-progress': complaint.status === 'In Progress',
+                  'status-resolved': complaint.status === 'Resolved'
+                }"
+              >
+                {{ complaint.status }}
+              </span>
+
+            </td>
+
+
+            <td>
+              <button class="complaint-view-btn">
+                View
+              </button>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="complaint-pagination">
+
+      <span>
+        Showing 1–5 of 32 complaints
+      </span>
+
+      <div>
+        <button>Previous</button>
+        <button class="complaint-current-page">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>7</button>
+        <button>Next</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

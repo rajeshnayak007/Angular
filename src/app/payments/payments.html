@@ -1,0 +1,193 @@
+<div class="payment-page">
+
+  <!-- Header -->
+  <div class="payment-header">
+
+    <div>
+      <h1>Payments</h1>
+      <p>Manage maintenance payments and payment history</p>
+    </div>
+
+    <button class="make-payment-btn">
+      + Make Payment
+    </button>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="payment-stats">
+
+    <div class="payment-stat blue">
+      <div class="payment-stat-icon">₹</div>
+      <div>
+        <h4>Total Collection</h4>
+        <h2>₹3,10,000</h2>
+        <p>This year</p>
+      </div>
+    </div>
+
+    <div class="payment-stat green">
+      <div class="payment-stat-icon">✓</div>
+      <div>
+        <h4>Paid Amount</h4>
+        <h2>₹2,80,000</h2>
+        <p>112 payments</p>
+      </div>
+    </div>
+
+    <div class="payment-stat yellow">
+      <div class="payment-stat-icon">◷</div>
+      <div>
+        <h4>Pending Amount</h4>
+        <h2>₹30,000</h2>
+        <p>12 payments</p>
+      </div>
+    </div>
+
+    <div class="payment-stat red">
+      <div class="payment-stat-icon">!</div>
+      <div>
+        <h4>Overdue</h4>
+        <h2>₹7,500</h2>
+        <p>3 payments</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Payment History -->
+  <div class="payment-card">
+
+    <div class="payment-card-header">
+
+      <div class="payment-title">
+        <span>▤</span>
+
+        <div>
+          <h2>Payment History</h2>
+          <p>View and manage resident payments</p>
+        </div>
+
+      </div>
+
+
+      <div class="payment-actions">
+
+        <div class="payment-search">
+          🔍
+          <input
+            type="text"
+            placeholder="Search by flat or resident..."
+          >
+        </div>
+
+        <select class="payment-filter">
+          <option>All Status</option>
+          <option>Paid</option>
+          <option>Pending</option>
+          <option>Overdue</option>
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div class="payment-table-container">
+
+      <table class="payment-table">
+
+        <thead>
+          <tr>
+            <th>Payment ID</th>
+            <th>Flat No</th>
+            <th>Resident</th>
+            <th>Month</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <tr *ngFor="let payment of payments">
+
+            <td>{{ payment.id }}</td>
+            <td>{{ payment.flat }}</td>
+            <td><strong>{{ payment.resident }}</strong></td>
+            <td>{{ payment.month }}</td>
+            <td><strong>{{ payment.amount }}</strong></td>
+            <td>{{ payment.date }}</td>
+            <td>{{ payment.method }}</td>
+
+            <td>
+              <span
+                class="payment-status"
+                [ngClass]="{
+                  'payment-paid': payment.status === 'Paid',
+                  'payment-pending': payment.status === 'Pending',
+                  'payment-overdue': payment.status === 'Overdue'
+                }"
+              >
+                {{ payment.status }}
+              </span>
+            </td>
+
+            <td>
+
+              <button
+                *ngIf="payment.status === 'Paid'"
+                class="receipt-btn"
+              >
+                Receipt
+              </button>
+
+              <button
+                *ngIf="
+                  payment.status === 'Pending' ||
+                  payment.status === 'Overdue'
+                "
+                class="pay-now-btn"
+                (click)="makePayment(payment.flat)"
+              >
+                Pay Now
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="payment-pagination">
+
+      <span>
+        Showing 1–6 of 124 payments
+      </span>
+
+      <div>
+        <button>Previous</button>
+        <button class="payment-current">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>21</button>
+        <button>Next</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

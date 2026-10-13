@@ -1,0 +1,72 @@
+<div class="logout-actions">
+
+  <button
+    class="logout-cancel-btn"
+    (click)="cancelLogout()"
+  >
+    Cancel
+  </button>
+
+  <button
+    class="logout-confirm-btn"
+    (click)="confirmLogout()"
+  >
+    Logout
+  </button>
+
+</div>
+
+<div class="logout-page">
+
+  <div class="logout-container">
+
+    <!-- Icon -->
+    <div class="logout-icon">
+      ↪
+    </div>
+
+
+    <!-- Title -->
+    <h1>{{ logoutPageData.title }}</h1>
+
+    <p>
+      {{ logoutPageData.message }}
+    </p>
+
+
+    <!-- User -->
+    <div class="logout-user-card">
+
+      <div class="logout-avatar">
+        RN
+      </div>
+
+      <div class="logout-user-info">
+
+        <strong>Rajesh Nayak</strong>
+
+        <span>
+          Resident • Flat A-101
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="logout-actions">
+
+      <button class="logout-cancel-btn">
+        Cancel
+      </button>
+
+      <button class="logout-confirm-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

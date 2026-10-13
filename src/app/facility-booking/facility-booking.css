@@ -1,0 +1,254 @@
+/* ==============================
+   FACILITY BOOKING
+============================== */
+
+.facility-booking-page {
+  width: 100%;
+}
+
+.facility-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.facility-page-header h1 {
+  margin-bottom: 6px;
+}
+
+.facility-page-header p {
+  color: #64748b;
+}
+
+.my-bookings-btn {
+  background: white;
+  border: 1px solid #dbe1e8;
+  padding: 11px 16px;
+  border-radius: 8px;
+}
+
+.facility-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.facility-stat {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.facility-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facility-stat h4 {
+  margin: 0 0 4px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.facility-stat h2 {
+  margin: 0 0 3px;
+}
+
+.facility-stat p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.facility-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.facility-search {
+  width: 300px;
+  background: white;
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.facility-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-left: 8px;
+}
+
+.facility-filter {
+  padding: 0 12px;
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+  background: white;
+}
+
+.facility-booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.booking-facility-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+}
+
+.booking-facility-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background: #eff6ff;
+}
+
+.booking-facility-info {
+  flex: 1;
+}
+
+.facility-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.facility-name-row h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.available-badge {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.facility-location {
+  color: #64748b;
+  font-size: 12px;
+  margin: 8px 0 15px;
+}
+
+.facility-details {
+  display: flex;
+  gap: 40px;
+}
+
+.facility-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.facility-details span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.facility-details strong {
+  font-size: 13px;
+}
+
+.facility-book-now {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 7px;
+}
+
+.recent-bookings-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  margin-top: 22px;
+  padding: 20px;
+}
+
+.recent-booking-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent-booking-header h2 {
+  margin-bottom: 5px;
+}
+
+.recent-booking-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.view-bookings-btn {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+}
+
+.booking-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+.booking-icon {
+  font-size: 25px;
+}
+
+.booking-row div {
+  flex: 1;
+}
+
+.booking-row p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.booking-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+.confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #92400e;
+}

@@ -1,0 +1,205 @@
+<div class="facility-booking-page">
+
+  <!-- Header -->
+  <div class="facility-page-header">
+
+    <div>
+      <h1>Facility Booking</h1>
+      <p>Book and manage society facilities</p>
+    </div>
+
+    <button class="my-bookings-btn">
+      📅 My Bookings
+    </button>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="facility-stat-grid">
+
+    <div class="facility-stat blue">
+      <div class="facility-stat-icon">🏢</div>
+      <div>
+        <h4>Total Facilities</h4>
+        <h2>6</h2>
+        <p>Available facilities</p>
+      </div>
+    </div>
+
+    <div class="facility-stat green">
+      <div class="facility-stat-icon">✓</div>
+      <div>
+        <h4>Available Now</h4>
+        <h2>6</h2>
+        <p>Ready for booking</p>
+      </div>
+    </div>
+
+    <div class="facility-stat purple">
+      <div class="facility-stat-icon">📅</div>
+      <div>
+        <h4>My Bookings</h4>
+        <h2>3</h2>
+        <p>Active bookings</p>
+      </div>
+    </div>
+
+    <div class="facility-stat orange">
+      <div class="facility-stat-icon">⏳</div>
+      <div>
+        <h4>Pending</h4>
+        <h2>1</h2>
+        <p>Awaiting approval</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Toolbar -->
+  <div class="facility-toolbar">
+
+    <div class="facility-search">
+      🔍
+      <input
+        type="text"
+        placeholder="Search facilities..."
+      >
+    </div>
+
+    <select class="facility-filter">
+      <option>All Facilities</option>
+      <option>Available</option>
+      <option>Booked</option>
+    </select>
+
+  </div>
+
+
+  <!-- Facilities -->
+  <div class="facility-booking-grid">
+
+    <div
+      class="booking-facility-card"
+      *ngFor="let facility of facilitiesBooking"
+    >
+
+      <div
+        class="booking-facility-icon"
+        [ngClass]="facility.class"
+      >
+        {{ facility.icon }}
+      </div>
+
+      <div class="booking-facility-info">
+
+        <div class="facility-name-row">
+
+          <h2>{{ facility.name }}</h2>
+
+          <span class="available-badge">
+            {{ facility.status }}
+          </span>
+
+        </div>
+
+        <p class="facility-location">
+          📍 {{ facility.location }}
+        </p>
+
+
+        <div class="facility-details">
+
+          <div>
+            <span>Capacity</span>
+            <strong>{{ facility.capacity }}</strong>
+          </div>
+
+          <div>
+            <span>Charges</span>
+            <strong>{{ facility.price }}</strong>
+          </div>
+
+        </div>
+
+
+        <button
+          class="facility-book-now"
+          (click)="bookFacilityPage(facility.name)"
+        >
+          Book Now
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Recent Bookings -->
+  <div class="recent-bookings-card">
+
+    <div class="recent-booking-header">
+
+      <div>
+        <h2>My Recent Bookings</h2>
+        <p>Your recently booked facilities</p>
+      </div>
+
+      <button class="view-bookings-btn">
+        View All
+      </button>
+
+    </div>
+
+
+    <div class="booking-list">
+
+      <div class="booking-row">
+        <span class="booking-icon">🏛️</span>
+
+        <div>
+          <strong>Community Hall</strong>
+          <p>Birthday Party • 25 May 2025</p>
+        </div>
+
+        <span class="booking-status confirmed">
+          Confirmed
+        </span>
+      </div>
+
+
+      <div class="booking-row">
+        <span class="booking-icon">🏊</span>
+
+        <div>
+          <strong>Swimming Pool</strong>
+          <p>Family Time • 22 May 2025</p>
+        </div>
+
+        <span class="booking-status confirmed">
+          Confirmed
+        </span>
+      </div>
+
+
+      <div class="booking-row">
+        <span class="booking-icon">🏋️</span>
+
+        <div>
+          <strong>Gym</strong>
+          <p>Monthly Membership • May 2025</p>
+        </div>
+
+        <span class="booking-status pending">
+          Pending
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

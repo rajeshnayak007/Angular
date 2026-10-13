@@ -1,0 +1,214 @@
+<!-- <div class="welcome-banner">
+
+  <div class="welcome-content">
+
+    <p>Welcome to</p>
+
+    <h1>ANARJ RESIDENCY</h1>
+
+    <span>A Better Place to Live Together</span>
+
+  </div>
+
+  <div class="building-image">
+    <div class="building"></div>
+  </div>
+
+</div> -->
+<div class="home-page">
+
+  <!-- Welcome Banner -->
+  <div class="welcome-banner">
+
+    <div class="welcome-content">
+      <p>Welcome to</p>
+      <h1>ANARJ RESIDENCY</h1>
+      <span>A Better Place to Live Together</span>
+    </div>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="stats-grid">
+
+    <div
+      class="stat-card"
+      *ngFor="let stat of stats"
+      [ngClass]="stat.class"
+    >
+
+      <div class="stat-icon">
+        {{ stat.icon }}
+      </div>
+
+      <div class="stat-content">
+        <h4>{{ stat.title }}</h4>
+        <h2>{{ stat.value }}</h2>
+        <p>{{ stat.subtitle }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Notice + Facility -->
+  <div class="middle-grid">
+
+    <!-- Recent Notices -->
+    <div class="card notice-card">
+
+      <div class="card-header">
+
+        <div class="card-title">
+          <span class="title-icon">📢</span>
+          <h3>Recent Notices</h3>
+        </div>
+
+        <button
+          class="view-btn"
+          (click)="viewAll('notices')"
+        >
+          View All ❯
+        </button>
+
+      </div>
+
+
+      <div class="notice-list">
+
+        <div
+          class="notice"
+          *ngFor="let notice of notices"
+        >
+
+          <div
+            class="notice-icon"
+            [class.warning]="notice.type === 'warning'"
+          >
+            {{ notice.icon }}
+          </div>
+
+          <div class="notice-content">
+            <h4>{{ notice.title }}</h4>
+            <p>{{ notice.description }}</p>
+          </div>
+
+          <span class="notice-time">
+            {{ notice.time }}
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Facility Booking -->
+    <div class="card facility-card">
+
+      <div class="card-header">
+
+        <div class="card-title">
+          <span class="title-icon">▣</span>
+          <h3>Facility Booking</h3>
+        </div>
+
+        <button
+          class="view-btn"
+          (click)="viewAll('facilities')"
+        >
+          View All ❯
+        </button>
+
+      </div>
+
+
+      <div class="facility-grid">
+
+        <div
+          class="facility"
+          *ngFor="let facility of facilities"
+          [ngClass]="facility.class"
+        >
+
+          <div class="facility-top">
+
+            <span class="facility-icon">
+              {{ facility.icon }}
+            </span>
+
+            <div>
+              <h4>{{ facility.name }}</h4>
+              <p>{{ facility.status }}</p>
+            </div>
+
+          </div>
+
+          <button
+            class="book-btn"
+            (click)="bookFacility(facility.name)"
+          >
+            Book Now
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Activities -->
+  <div class="card activities-card">
+
+    <div class="card-header">
+
+      <div class="card-title">
+        <span class="title-icon">▣</span>
+        <h3>My Activities</h3>
+      </div>
+
+      <button
+        class="view-btn"
+        (click)="viewAll('activities')"
+      >
+        View All ❯
+      </button>
+
+    </div>
+
+
+    <div class="activity-list">
+
+      <div
+        class="activity"
+        *ngFor="let activity of activities"
+      >
+
+        <div
+          class="activity-icon"
+          [ngClass]="activity.class"
+        >
+          {{ activity.icon }}
+        </div>
+
+        <span class="activity-text">
+          {{ activity.text }}
+        </span>
+
+        <span class="activity-date">
+          {{ activity.date }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

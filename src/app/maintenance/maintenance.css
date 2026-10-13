@@ -1,0 +1,196 @@
+/* ==============================
+   MAINTENANCE
+============================== */
+
+.maintenance-page {
+  width: 100%;
+}
+
+.maintenance-header {
+  margin-bottom: 22px;
+}
+
+.maintenance-header h1 {
+  margin-bottom: 7px;
+  font-size: 28px;
+}
+
+.breadcrumb {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.breadcrumb span {
+  margin: 0 7px;
+}
+
+.maintenance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.maintenance-stat {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.maintenance-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  font-size: 21px;
+}
+
+.maintenance-stat h4 {
+  margin: 0 0 4px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.maintenance-stat h2 {
+  margin: 0 0 3px;
+}
+
+.maintenance-stat p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.maintenance-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.maintenance-bills-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.maintenance-card-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maintenance-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.maintenance-title h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.maintenance-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.maintenance-search {
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.maintenance-search input {
+  border: none;
+  outline: none;
+  padding-left: 8px;
+}
+
+.create-bill-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+
+.maintenance-table-container {
+  overflow-x: auto;
+}
+
+.maintenance-table th,
+.maintenance-table td {
+  padding: 13px 15px;
+}
+
+.bill-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+.bill-paid {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.bill-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bill-overdue {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.bill-view {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.bill-view-btn,
+.bill-edit-btn {
+  border: none;
+  background: transparent;
+  margin-right: 10px;
+  color: #2563eb;
+}
+
+.maintenance-pagination {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-buttons button {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 7px 11px;
+}
+
+.pagination-buttons .current {
+  background: #2563eb;
+  color: white;
+}

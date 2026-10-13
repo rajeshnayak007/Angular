@@ -1,0 +1,183 @@
+<div class="maintenance-page">
+
+  <!-- Header -->
+  <div class="maintenance-header">
+
+    <div>
+      <h1>Maintenance</h1>
+
+      <p class="breadcrumb">
+        Home <span>›</span> Maintenance
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="maintenance-stats">
+
+    <div class="maintenance-stat blue">
+      <div class="maintenance-stat-icon">📄</div>
+      <div>
+        <h4>Total Bills</h4>
+        <h2>124</h2>
+        <p>All time</p>
+      </div>
+    </div>
+
+
+    <div class="maintenance-stat green">
+      <div class="maintenance-stat-icon">✓</div>
+      <div>
+        <h4>Paid Bills</h4>
+        <h2>112</h2>
+        <p>Updated today</p>
+      </div>
+    </div>
+
+
+    <div class="maintenance-stat yellow">
+      <div class="maintenance-stat-icon">◷</div>
+      <div>
+        <h4>Pending</h4>
+        <h2>12</h2>
+        <p>Awaiting payment</p>
+      </div>
+    </div>
+
+
+    <div class="maintenance-stat red">
+      <div class="maintenance-stat-icon">!</div>
+      <div>
+        <h4>Overdue</h4>
+        <h2>3</h2>
+        <p>Requires action</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Bills -->
+  <div class="maintenance-content-grid">
+
+    <div class="maintenance-bills-card">
+
+      <div class="maintenance-card-header">
+
+        <div class="maintenance-title">
+          <span>▤</span>
+          <h2>Maintenance Bills List</h2>
+        </div>
+
+        <div class="maintenance-actions">
+
+          <div class="maintenance-search">
+            🔍
+            <input
+              type="text"
+              placeholder="Search by flat, month..."
+            >
+          </div>
+
+          <button class="create-bill-btn">
+            + Create Bill
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="maintenance-table-container">
+
+        <table class="maintenance-table">
+
+          <thead>
+            <tr>
+              <th>Bill ID</th>
+              <th>Flat No</th>
+              <th>Month</th>
+              <th>Amount</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+
+          <tbody>
+
+            <tr *ngFor="let bill of maintenanceBills">
+
+              <td>{{ bill.id }}</td>
+              <td>{{ bill.flat }}</td>
+              <td>{{ bill.month }}</td>
+              <td>{{ bill.amount }}</td>
+              <td>{{ bill.dueDate }}</td>
+
+              <td>
+                <span
+                  class="bill-status"
+                  [ngClass]="{
+                    'bill-view': bill.status === 'View',
+                    'bill-pending': bill.status === 'Pending',
+                    'bill-overdue': bill.status === 'Overdue',
+                    'bill-paid': bill.status === 'Paid'
+                  }"
+                >
+                  {{ bill.status }}
+                </span>
+              </td>
+
+              <td>
+
+                <button
+                  *ngIf="bill.status === 'View'"
+                  class="bill-view-btn"
+                >
+                  View
+                </button>
+
+                <button
+                  *ngIf="bill.status === 'View'"
+                  class="bill-edit-btn"
+                >
+                  Edit
+                </button>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <div class="maintenance-pagination">
+
+        <span>
+          Showing 1–6 of 124 bills
+        </span>
+
+        <div class="pagination-buttons">
+          <button>Previous</button>
+          <button class="current">1</button>
+          <button>2</button>
+          <button>3</button>
+          <span>...</span>
+          <button>21</button>
+          <button>Next</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

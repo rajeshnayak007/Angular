@@ -1,0 +1,190 @@
+<div class="profile-page">
+
+  <!-- Header -->
+  <div class="profile-page-header">
+
+    <div>
+      <h1>My Profile</h1>
+
+      <p>
+        Manage your personal information and account details
+      </p>
+    </div>
+
+    <button class="profile-edit-btn">
+      ✎ Edit Profile
+    </button>
+
+  </div>
+
+
+  <!-- Main Profile -->
+  <div class="profile-main-card">
+
+    <div class="profile-left">
+
+      <div class="profile-avatar">
+        RN
+      </div>
+
+      <h2>{{ profilePageData.name }}</h2>
+
+      <p class="profile-role">
+        {{ profilePageData.role }}
+      </p>
+
+      <span class="profile-active">
+        ● Active Member
+      </span>
+
+      <div class="profile-member">
+        Member since {{ profilePageData.memberSince }}
+      </div>
+
+    </div>
+
+
+    <div class="profile-details">
+
+      <h2>Personal Information</h2>
+
+      <div class="profile-details-grid">
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Full Name</span>
+          <strong>{{ profilePageData.name }}</strong>
+        </div>
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Email Address</span>
+          <strong>{{ profilePageData.email }}</strong>
+        </div>
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Phone Number</span>
+          <strong>{{ profilePageData.phone }}</strong>
+        </div>
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Flat Number</span>
+          <strong>{{ profilePageData.flat }}</strong>
+        </div>
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Block</span>
+          <strong>{{ profilePageData.block }}</strong>
+        </div>
+
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">Account Type</span>
+          <strong>{{ profilePageData.role }}</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Bottom Cards -->
+  <div class="profile-bottom-grid">
+
+    <div class="profile-info-card">
+
+      <div class="profile-card-heading">
+
+        <div class="profile-card-icon">
+          📞
+        </div>
+
+        <div>
+          <h2>Contact Information</h2>
+          <p>Registered contact details</p>
+        </div>
+
+      </div>
+
+
+      <div class="profile-info-row">
+        <span>📧 Email</span>
+        <strong>{{ profilePageData.email }}</strong>
+      </div>
+
+
+      <div class="profile-info-row">
+        <span>📱 Phone</span>
+        <strong>{{ profilePageData.phone }}</strong>
+      </div>
+
+    </div>
+
+
+    <div class="profile-info-card">
+
+      <div class="profile-card-heading">
+
+        <div class="profile-card-icon residence">
+          🏠
+        </div>
+
+        <div>
+          <h2>Residence Information</h2>
+          <p>Your society residence details</p>
+        </div>
+
+      </div>
+
+
+      <div class="profile-info-row">
+        <span>🏢 Block</span>
+        <strong>{{ profilePageData.block }}</strong>
+      </div>
+
+
+      <div class="profile-info-row">
+        <span>🚪 Flat Number</span>
+        <strong>{{ profilePageData.flat }}</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Settings -->
+  <div class="profile-settings-card">
+
+    <h2>Account Settings</h2>
+
+
+    <div class="profile-setting-row">
+
+      <div>
+        <strong>Change Password</strong>
+        <p>Update your account password</p>
+      </div>
+
+      <button class="profile-setting-btn">
+        Change
+      </button>
+
+    </div>
+
+
+    <div class="profile-setting-row">
+
+      <div>
+        <strong>Notification Preferences</strong>
+        <p>Manage your notification settings</p>
+      </div>
+
+      <button class="profile-setting-btn">
+        Manage
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

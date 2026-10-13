@@ -1,0 +1,171 @@
+<div class="residents-page">
+
+  <!-- Header -->
+  <div class="page-header">
+
+    <div>
+      <h1>Residents</h1>
+      <p>Manage all residents of the society</p>
+    </div>
+
+    <div class="resident-actions">
+
+      <div class="search-box">
+        🔍
+        <input
+          type="text"
+          placeholder="Search by name, flat, or email..."
+        >
+      </div>
+
+      <button class="add-resident-btn">
+        + Add Resident
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="stats-grid">
+
+    <div class="stat-card blue">
+      <div class="stat-icon">👥</div>
+      <div class="stat-content">
+        <h4>Total Residents</h4>
+        <h2>256</h2>
+        <p>Families Living</p>
+      </div>
+    </div>
+
+
+    <div class="stat-card green">
+      <div class="stat-icon">▣</div>
+      <div class="stat-content">
+        <h4>Occupied Flats</h4>
+        <h2>212</h2>
+        <p>Currently Occupied</p>
+      </div>
+    </div>
+
+
+    <div class="stat-card orange">
+      <div class="stat-icon">▤</div>
+      <div class="stat-content">
+        <h4>Vacant Flats</h4>
+        <h2>44</h2>
+        <p>Available Now</p>
+      </div>
+    </div>
+
+
+    <div class="stat-card purple">
+      <div class="stat-icon">🔧</div>
+      <div class="stat-content">
+        <h4>Owners vs Tenants</h4>
+        <h2>180 / 76</h2>
+        <p>Owners | Tenants</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Residents Table -->
+  <div class="residents-table-card">
+
+    <div class="table-header">
+      <h2>Residents List</h2>
+      <span>Showing 1–7 of 256</span>
+    </div>
+
+
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Flat No</th>
+            <th>Resident Name</th>
+            <th>Contact No</th>
+            <th>Email</th>
+            <th>Family Members</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <tr *ngFor="let resident of residents">
+
+            <td>{{ resident.flat }}</td>
+
+            <td>
+              <div class="resident-name">
+                <span class="avatar">
+                  {{ resident.initials }}
+                </span>
+                <strong>{{ resident.name }}</strong>
+              </div>
+            </td>
+
+            <td>{{ resident.phone }}</td>
+
+            <td>{{ resident.email }}</td>
+
+            <td>{{ resident.family }}</td>
+
+            <td>
+              <span
+                class="type-badge"
+                [class.tenant]="resident.type === 'Tenant'"
+              >
+                {{ resident.type }}
+              </span>
+            </td>
+
+            <td>
+              <span
+                class="status-badge"
+                [class.inactive]="resident.status === 'Inactive'"
+              >
+                {{ resident.status }}
+              </span>
+            </td>
+
+            <td>
+              <button class="edit-btn">✎</button>
+              <button class="delete-btn">🗑</button>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <!-- Pagination -->
+  <div class="pagination">
+
+    <span>Showing 7 of 256 residents</span>
+
+    <div>
+      <button>←</button>
+      <button class="active-page">1</button>
+      <button>2</button>
+      <button>→</button>
+    </div>
+
+  </div>
+
+</div>

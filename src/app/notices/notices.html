@@ -1,0 +1,167 @@
+<div class="notice-page">
+
+  <!-- Header -->
+  <div class="notice-page-header">
+
+    <div>
+      <h1>Notices</h1>
+
+      <p>
+        Stay updated with the latest society announcements
+      </p>
+    </div>
+
+    <button class="notice-create-btn">
+      + Create Notice
+    </button>
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div class="notice-stat-grid">
+
+    <div class="notice-stat blue">
+      <div class="notice-stat-icon">📢</div>
+
+      <div>
+        <h4>Total Notices</h4>
+        <h2>24</h2>
+        <p>This year</p>
+      </div>
+    </div>
+
+
+    <div class="notice-stat green">
+      <div class="notice-stat-icon">✓</div>
+
+      <div>
+        <h4>Published</h4>
+        <h2>20</h2>
+        <p>Visible to residents</p>
+      </div>
+    </div>
+
+
+    <div class="notice-stat purple">
+      <div class="notice-stat-icon">📅</div>
+
+      <div>
+        <h4>This Month</h4>
+        <h2>6</h2>
+        <p>New notices</p>
+      </div>
+    </div>
+
+
+    <div class="notice-stat orange">
+      <div class="notice-stat-icon">!</div>
+
+      <div>
+        <h4>Important</h4>
+        <h2>3</h2>
+        <p>Requires attention</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Search -->
+  <div class="notice-toolbar">
+
+    <div class="notice-search">
+      🔍
+
+      <input
+        type="text"
+        placeholder="Search notices..."
+      >
+    </div>
+
+    <select class="notice-filter">
+      <option>All Categories</option>
+      <option>Maintenance</option>
+      <option>Society</option>
+      <option>General</option>
+    </select>
+
+  </div>
+
+
+  <!-- Notice List -->
+  <div class="notice-page-list">
+
+    <div
+      class="notice-page-item"
+      *ngFor="let item of noticePageData"
+    >
+
+      <div class="notice-page-icon">
+        📢
+      </div>
+
+
+      <div class="notice-page-content">
+
+        <div class="notice-page-title-row">
+
+          <h2>{{ item.title }}</h2>
+
+          <span
+            class="notice-priority"
+            [class.notice-important]="item.priority === 'Important'"
+          >
+            {{ item.priority }}
+          </span>
+
+        </div>
+
+
+        <p class="notice-description">
+          {{ item.description }}
+        </p>
+
+
+        <div class="notice-meta">
+
+          <span>📅 {{ item.date }}</span>
+
+          <span>🕐 {{ item.time }}</span>
+
+          <span>📁 {{ item.category }}</span>
+
+        </div>
+
+      </div>
+
+
+      <button class="notice-view-btn">
+        View
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Pagination -->
+  <div class="notice-pagination">
+
+    <span>
+      Showing 1–4 of 24 notices
+    </span>
+
+    <div>
+      <button>Previous</button>
+      <button class="notice-current-page">1</button>
+      <button>2</button>
+      <button>3</button>
+      <span>...</span>
+      <button>6</button>
+      <button>Next</button>
+    </div>
+
+  </div>
+
+</div>

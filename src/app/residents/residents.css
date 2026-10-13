@@ -1,0 +1,174 @@
+/* ==============================
+   RESIDENTS
+============================== */
+
+.residents-page {
+  width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.resident-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.search-box {
+  height: 42px;
+  padding: 0 13px;
+  background: white;
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 220px;
+}
+
+.add-resident-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  padding: 0 18px;
+}
+
+.residents-table-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.table-header span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  text-align: left;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13px;
+}
+
+.resident-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.type-badge,
+.status-badge {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 11px;
+}
+
+.type-badge.tenant {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  background: transparent;
+  margin-right: 8px;
+}
+
+.edit-btn {
+  color: #2563eb;
+}
+
+.delete-btn {
+  color: #dc2626;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.pagination button {
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 7px 12px;
+}
+
+.pagination .active-page {
+  background: #2563eb;
+  color: white;
+}
